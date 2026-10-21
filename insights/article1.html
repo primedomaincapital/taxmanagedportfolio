@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tax-Loss Harvesting: How Much Does It Actually Save? | taxmanagedportfolio.com</title>
+<meta name="description" content="One manager harvested $8.8B in losses in 2025. Vanguard models 47 bps of tax alpha. We test the famous 100-basis-point harvesting claim against real data.">
+<meta property="og:title" content="Tax-Loss Harvesting: How Much Does It Actually Save?">
+<meta property="og:description" content="One manager harvested $8.8B in losses in 2025. Vanguard models 47 bps of tax alpha. We test the famous 100-basis-point harvesting claim against real data.">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Tax-Loss Harvesting: How Much Does It Actually Save?", "description": "One manager harvested $8.8B in losses in 2025. Vanguard models 47 bps of tax alpha. We test the famous 100-basis-point harvesting claim against real data.", "author": {"@type": "Organization", "name": "Prime Domain Capital"}, "publisher": {"@type": "Organization", "name": "Prime Domain Capital"}}
+</script>
+<style>
+:root{--forest:#0e2a1e;--pine:#143c2a;--cream:#f6f1e6;--cream2:#ece3cf;--gold:#c8a24a;--gold-dim:#8a6f2c;--ink:#0a1a12;--sage:#7d9078}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Newsreader',serif;font-weight:300;line-height:1.75;overflow-x:hidden}
+.mono{font-family:'IBM Plex Mono',monospace}
+#ledger{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:rgba(246,241,230,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(14,42,30,.14)}
+nav .brand{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--forest);font-weight:500}
+nav .price{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--sage)}
+nav .price b{color:var(--forest)}
+.hero{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:150px 48px 90px;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:24px}
+.hero h1{font-weight:400;font-size:clamp(46px,6.5vw,96px);line-height:1.04;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--forest)}
+.hero .lede{margin-top:24px;font-size:19px;color:#4a5a4c;max-width:46ch}
+.hero-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.hero figure{margin:0}
+.hero figure img{width:100%;height:560px;object-fit:cover}
+.hero figcaption{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-top:12px}
+.btn{display:inline-block;padding:17px 40px;background:var(--forest);color:var(--cream);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:.3s;border:1px solid var(--forest)}
+.btn:hover{background:transparent;color:var(--forest)}
+.btn.line{background:transparent;color:var(--forest);border-color:var(--forest)}
+.btn.line:hover{background:var(--forest);color:var(--cream)}
+section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:90px 48px}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .85s ease,transform .85s ease}
+.reveal.in{opacity:1;transform:none}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:18px}
+h2{font-weight:400;font-size:clamp(32px,4.4vw,56px);line-height:1.14;margin-bottom:26px}
+h2 em{font-style:italic;color:var(--forest)}
+.copy{font-size:18px;color:#4a5a4c;max-width:66ch;margin-bottom:20px}
+.copy strong{color:var(--ink);font-weight:500}
+.math{background:var(--forest);color:var(--cream);padding:70px 48px;margin:60px 0 0;position:relative;z-index:1}
+.math .inner{max-width:1200px;margin:0 auto}
+.math h2{color:var(--cream)}
+.math h2 em{color:var(--gold)}
+.ledger-table{width:100%;border-collapse:collapse;margin-top:36px;font-family:'IBM Plex Mono',monospace;font-size:14px}
+.ledger-table th{text-align:left;font-weight:500;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);padding:16px 12px;border-bottom:1px solid rgba(200,162,74,.3)}
+.ledger-table td{padding:18px 12px;border-bottom:1px solid rgba(246,241,230,.1);color:var(--cream)}
+.ledger-table tr.hl td{color:var(--gold);font-weight:500}
+.ledger-table .r{text-align:right}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:54px}
+.gallery img{width:100%;height:280px;object-fit:cover}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:20px}
+.duo img{width:100%;height:440px;object-fit:cover}
+.points{margin-top:8px}
+.point{display:flex;gap:20px;padding:26px 0;border-top:1px solid rgba(14,42,30,.14)}
+.point:last-child{border-bottom:1px solid rgba(14,42,30,.14)}
+.point .mk{font-family:'IBM Plex Mono',monospace;color:var(--gold-dim);font-size:13px;min-width:36px;padding-top:4px}
+.point h3{font-size:20px;font-weight:500;margin-bottom:8px}
+.point p{font-size:16px;color:#4a5a4c}
+.buyers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.buyer{background:#fff;border:1px solid rgba(14,42,30,.12);padding:40px 32px;transition:.3s}
+.buyer:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(14,42,30,.1);border-color:var(--gold)}
+.buyer .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;color:var(--gold-dim)}
+.buyer h3{font-size:21px;font-weight:500;margin:14px 0 10px}
+.buyer p{font-size:15px;color:#4a5a4c}
+.closing{position:relative;z-index:1;text-align:center;padding:130px 48px;background:var(--ink);color:var(--cream);overflow:hidden}
+.closing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.16}
+.closing h2{color:var(--cream);max-width:22ch;margin:0 auto 20px;position:relative}
+.closing h2 em{color:var(--gold)}
+.closing .price{font-size:clamp(54px,7vw,92px);color:var(--gold);margin-bottom:36px;position:relative}
+footer{position:relative;z-index:1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:1200px;margin:0 auto;padding:36px 48px;font-size:13px;color:#7d9078}
+footer a{color:var(--forest);text-decoration:none;font-weight:500}
+@media(max-width:900px){nav,.hero,section{padding-left:24px;padding-right:24px}.hero{grid-template-columns:1fr}.hero figure img{height:340px}.duo,.buyers,.gallery{grid-template-columns:1fr}}
+
+/* ---- Insights article styles (matches site) ---- */
+.article-main{position:relative;z-index:1}
+nav a.back{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--forest);text-decoration:none;font-weight:500}
+nav a.back:hover{color:var(--gold-dim)}
+.article-head{max-width:960px;margin:0 auto;padding:140px 48px 8px;text-align:center}
+.article-head h1{font-weight:400;font-size:clamp(38px,5vw,66px);line-height:1.08;margin:0 auto 22px;max-width:24ch;letter-spacing:-.01em}
+.article-head h1 em{font-style:italic;color:var(--forest)}
+.article-head .lede{margin:0 auto;font-size:19px;color:#4a5a4c;max-width:54ch}
+.byline{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-dim);margin:28px 0 6px}
+.article-figure{max-width:1200px;margin:52px auto 0;padding:0 48px}
+.article-figure img{width:100%;height:400px;object-fit:cover}
+.article-body{max-width:690px;margin:0 auto;padding:54px 48px 40px;font-size:18px;color:#4a5a4c;font-weight:300;line-height:1.8}
+.article-body p{margin-bottom:24px}
+.article-body h2{font-weight:400;font-size:30px;line-height:1.2;color:var(--ink);margin:56px 0 20px}
+.article-body .pull{font-size:23px;font-style:italic;color:var(--ink);border-left:3px solid var(--gold);padding-left:26px;margin:56px 0;line-height:1.55}
+.insights-link{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dim);text-decoration:none;font-weight:500}
+.insights-link:hover{color:var(--forest)}
+</style>
+</head>
+<body>
+<canvas id="ledger"></canvas>
+<nav>
+  <div class="brand">Prime Domain Capital</div>
+  <a class="back" href="../index.html">&larr; Back to TaxManagedPortfolio.com</a>
+</nav>
+<main class="article-main">
+<div class="article-head">
+  <div class="kicker reveal">Tax-Managed Insights &middot; Research</div>
+  <h1 class="reveal">Tax-Loss Harvesting: <em>How Much Does It Actually Save?</em></h1>
+  <p class="lede reveal">One manager harvested $8.8B in losses in 2025. Vanguard models 47 bps of tax alpha. We test the famous 100-basis-point harvesting claim against real data.</p>
+  <div class="byline reveal">Research &middot; Prime Domain Capital</div>
+</div>
+<figure class="article-figure reveal"><img src="../images/photo1.jpg" alt="tax-loss harvesting savings"></figure>
+<article class="article-body">
+<p>In 2025, one asset manager&#x27;s systematic harvesting program sold losing positions across hundreds of thousands of client accounts and realized more than $8.8 billion in capital losses — producing an estimated $3.3 billion in potential tax benefit for its investors. Read that again: $3.3 billion, in a year when the S&amp;P 500 was up. In a single quarter — Q4 2025 — the program harvested over $2.1 billion in losses across more than 275,000 trades. That is the scale at which modern tax-loss harvesting operates, and it is the strongest argument that the strategy is real. It is also where the honest analysis has to start: with the gap between what the marketing claims and what the math supports.</p>
+<p>The claim you will hear most often is that tax-loss harvesting adds &quot;100 basis points&quot; — a full percentage point — of annual after-tax return. It is repeated in pitch decks with the confidence of a physical law. It is not a physical law. Vanguard&#x27;s own modeling, built on Axioma data across rolling historical periods, puts the expected 15-year annualized benefit at 47 basis points for a mass-affluent investor holding passive ETFs in a taxable account. That is less than half the headline number. And when Vanguard scales that 47 bps to the investor&#x27;s entire portfolio — because only about 25% of the modeled investor&#x27;s assets sat in taxable equities — the portfolio-level benefit drops to 12 basis points. Twelve. The difference between the brochure and the portfolio is the difference between gross and net, and it is the first thing a serious investor should ask about.</p>
+<p>Vanguard&#x27;s scenario analysis adds crucial texture. In high-volatility 15-year market environments, the model&#x27;s estimated benefit ranged from 0.51% to 1.4% — the famous 100 bps lives in this neighborhood, and then some. In average-volatility environments, the range fell to 0.08% to 0.83%. Translation: the strategy&#x27;s payoff is itself volatile, and the investors who need it most in calm markets get the least from it. Tax-loss harvesting is, in a precise sense, a volatility trade. You are converting market dispersion into tax assets.</p>
+<h2>What Actually Moves the Number</h2>
+<p>Four variables determine whether harvesting earns its fee, and they are worth internalizing because they separate real programs from repackaged rebalancing.</p>
+<p>First, your tax rate — obviously, but with an underappreciated twist. A harvested loss is worth the marginal rate it offsets. For a high earner in 2026 paying 20% on long-term gains plus the 3.8% net investment income tax, each dollar of loss used against long-term gains is worth 23.8 cents. Used against short-term gains taxed at 37%, it is worth 37 cents. The same loss, harvested identically, can be worth half again as much depending on what it offsets. Programs that track the character of gains — short versus long — extract materially more than ones that treat all losses as interchangeable.</p>
+<p>Second, whether you have gains to offset. Losses banked in a year with no gains to absorb are carried forward — still valuable, but deferred, and worth less in present-value terms. The investors who harvest the most value tend to be those with concentrated legacy positions, business sales, real estate exits, or private equity distributions generating regular gains to shelter.</p>
+<p>Third, the structure of the account. You cannot harvest inside an ETF. An ETF shareholder owns shares of a pooled vehicle; the fund&#x27;s internal losses are invisible to you. You harvest by owning the securities directly — a separately managed account or a direct-indexing portfolio holding the individual stocks of an index. This is why the direct-indexing boom and the harvesting boom are the same phenomenon. The account structure is the strategy.</p>
+<p>Fourth, the quality of the implementation. Parametric&#x27;s fixed-income operation shows what professional implementation looks like at scale: in the first half of 2026 alone, it sold more than $3 billion of bonds at a loss across its fixed-income SMAs, realizing $68 million in net losses for an estimated $22 million in tax benefit. In the first three quarters of 2025, the figure was $13 billion sold to realize $330 million in net losses. The discipline is in the replacement securities — maintaining duration, credit quality, and positioning while staying clear of the wash-sale rule — not in the selling.</p>
+<h2>The Wash-Sale Trap and the Fine Print</h2>
+<p>The wash-sale rule disallows the loss if you buy a &quot;substantially identical&quot; security within 30 days before or after the sale — and it applies across all your accounts, including your spouse&#x27;s and your IRAs. Trip it, and the loss is disallowed while your basis adjusts upward, deferring rather than destroying the benefit — but sloppy implementation across multiple managers and accounts is how investors leave money on the table. This is an argument for consolidating taxable management with one manager who sees the whole picture, not five managers each optimizing their own sleeve.</p>
+<p>And the fine print that the pitch decks skip: harvesting defers taxes; it does not eliminate them. You sell at a loss and buy a replacement at a lower basis, so the future gain is larger. The benefit is the time value of the deferral plus the ability to use losses against higher-rate gains, step up basis at death, or donate appreciated replacement shares to charity — where the deferred gain disappears entirely. For investors with charitable intent, harvested portfolios are genuinely extraordinary: you get the deduction and the gain never gets taxed. For everyone else, the honest framing is a cheap loan from the Treasury, renewed annually.</p>
+<p>So how much does it actually save? For the right investor — high tax rate, regular gains to offset, direct ownership, professional implementation — the industry&#x27;s own research says something like half a percent to one percent a year over long horizons, with wide dispersion around that mean. For the wrong investor — low bracket, no gains, pooled funds — it can be near zero after fees. The strategy works. The question was never whether it works. The question is whether it works for you, net of everything. Demand the net number.</p>
+<p class="pull">Tax-managed investing is a discipline, not a product. taxmanagedportfolio.com is available for acquisition by the firm that will define the category. Inquiries: info@primedomaincapital.com.</p>
+</article>
+</main>
+<div class="closing">
+  <img src="../images/photo2.jpg" alt="">
+  <div class="kicker reveal" style="color:var(--gold)">Acquisition</div>
+  <h2 class="reveal">The after-tax <em>advantage,</em> named.</h2>
+  <div class="price reveal">$23,888</div>
+  <div class="reveal"><a class="btn" style="background:var(--gold);border-color:var(--gold);color:var(--ink)" href="https://www.afternic.com/domain/taxmanagedportfolio.com">Buy Now via Afternic</a></div>
+  <p class="reveal" style="margin-top:26px;font-size:13px;color:#9db09a;position:relative">Escrow.com secure transfer &middot; <a href="mailto:info@primedomaincapital.com" style="color:var(--gold)">info@primedomaincapital.com</a></p>
+</div>
+<footer>
+  <span>Offered by <strong>Prime Domain Capital</strong></span>
+  <span><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></span>
+</footer>
+<script>
+// Falling ledger figures
+const c=document.getElementById('ledger'),x=c.getContext('2d');let W,H;function rs(){W=c.width=innerWidth;H=c.height=innerHeight}rs();addEventListener('resize',rs);
+const figs=[];const sym=['$','%','0','1','2','3','4','5','6','7','8','9','−','+'];
+for(let i=0;i<60;i++)figs.push({x:Math.random()*W,y:Math.random()*H,s:Math.random()*.5+.2,ch:sym[Math.floor(Math.random()*sym.length)]});
+(function loop(){x.clearRect(0,0,W,H);x.font='14px monospace';for(const f of figs){f.y+=f.s;if(f.y>H){f.y=0;f.x=Math.random()*W}x.fillStyle='rgba(20,60,42,.16)';x.fillText(f.ch,f.x,f.y)}requestAnimationFrame(loop)})();
+const io=new IntersectionObserver(e=>e.forEach(v=>{if(v.isIntersecting){v.target.classList.add('in');io.unobserve(v.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5fb51d1999084c91989809d7608061e0"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Direct Indexing vs. ETFs: The Tax Alpha Comparison | taxmanagedportfolio.com</title>
+<meta name="description" content="Direct indexing is headed for $825B by 2026. ETFs remain the tax-efficiency kings of pooled investing. We compare tax alpha, costs, and fit, net of fees.">
+<meta property="og:title" content="Direct Indexing vs. ETFs: The Tax Alpha Comparison">
+<meta property="og:description" content="Direct indexing is headed for $825B by 2026. ETFs remain the tax-efficiency kings of pooled investing. We compare tax alpha, costs, and fit, net of fees.">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Direct Indexing vs. ETFs: The Tax Alpha Comparison", "description": "Direct indexing is headed for $825B by 2026. ETFs remain the tax-efficiency kings of pooled investing. We compare tax alpha, costs, and fit, net of fees.", "author": {"@type": "Organization", "name": "Prime Domain Capital"}, "publisher": {"@type": "Organization", "name": "Prime Domain Capital"}}
+</script>
+<style>
+:root{--forest:#0e2a1e;--pine:#143c2a;--cream:#f6f1e6;--cream2:#ece3cf;--gold:#c8a24a;--gold-dim:#8a6f2c;--ink:#0a1a12;--sage:#7d9078}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Newsreader',serif;font-weight:300;line-height:1.75;overflow-x:hidden}
+.mono{font-family:'IBM Plex Mono',monospace}
+#ledger{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 48px;background:rgba(246,241,230,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(14,42,30,.14)}
+nav .brand{font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--forest);font-weight:500}
+nav .price{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--sage)}
+nav .price b{color:var(--forest)}
+.hero{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:150px 48px 90px;display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+.hero .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:24px}
+.hero h1{font-weight:400;font-size:clamp(46px,6.5vw,96px);line-height:1.04;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--forest)}
+.hero .lede{margin-top:24px;font-size:19px;color:#4a5a4c;max-width:46ch}
+.hero-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+.hero figure{margin:0}
+.hero figure img{width:100%;height:560px;object-fit:cover}
+.hero figcaption{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-top:12px}
+.btn{display:inline-block;padding:17px 40px;background:var(--forest);color:var(--cream);text-decoration:none;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:500;transition:.3s;border:1px solid var(--forest)}
+.btn:hover{background:transparent;color:var(--forest)}
+.btn.line{background:transparent;color:var(--forest);border-color:var(--forest)}
+.btn.line:hover{background:var(--forest);color:var(--cream)}
+section{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:90px 48px}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .85s ease,transform .85s ease}
+.reveal.in{opacity:1;transform:none}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-dim);margin-bottom:18px}
+h2{font-weight:400;font-size:clamp(32px,4.4vw,56px);line-height:1.14;margin-bottom:26px}
+h2 em{font-style:italic;color:var(--forest)}
+.copy{font-size:18px;color:#4a5a4c;max-width:66ch;margin-bottom:20px}
+.copy strong{color:var(--ink);font-weight:500}
+.math{background:var(--forest);color:var(--cream);padding:70px 48px;margin:60px 0 0;position:relative;z-index:1}
+.math .inner{max-width:1200px;margin:0 auto}
+.math h2{color:var(--cream)}
+.math h2 em{color:var(--gold)}
+.ledger-table{width:100%;border-collapse:collapse;margin-top:36px;font-family:'IBM Plex Mono',monospace;font-size:14px}
+.ledger-table th{text-align:left;font-weight:500;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);padding:16px 12px;border-bottom:1px solid rgba(200,162,74,.3)}
+.ledger-table td{padding:18px 12px;border-bottom:1px solid rgba(246,241,230,.1);color:var(--cream)}
+.ledger-table tr.hl td{color:var(--gold);font-weight:500}
+.ledger-table .r{text-align:right}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:54px}
+.gallery img{width:100%;height:280px;object-fit:cover}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:20px}
+.duo img{width:100%;height:440px;object-fit:cover}
+.points{margin-top:8px}
+.point{display:flex;gap:20px;padding:26px 0;border-top:1px solid rgba(14,42,30,.14)}
+.point:last-child{border-bottom:1px solid rgba(14,42,30,.14)}
+.point .mk{font-family:'IBM Plex Mono',monospace;color:var(--gold-dim);font-size:13px;min-width:36px;padding-top:4px}
+.point h3{font-size:20px;font-weight:500;margin-bottom:8px}
+.point p{font-size:16px;color:#4a5a4c}
+.buyers{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.buyer{background:#fff;border:1px solid rgba(14,42,30,.12);padding:40px 32px;transition:.3s}
+.buyer:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(14,42,30,.1);border-color:var(--gold)}
+.buyer .tag{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.26em;color:var(--gold-dim)}
+.buyer h3{font-size:21px;font-weight:500;margin:14px 0 10px}
+.buyer p{font-size:15px;color:#4a5a4c}
+.closing{position:relative;z-index:1;text-align:center;padding:130px 48px;background:var(--ink);color:var(--cream);overflow:hidden}
+.closing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.16}
+.closing h2{color:var(--cream);max-width:22ch;margin:0 auto 20px;position:relative}
+.closing h2 em{color:var(--gold)}
+.closing .price{font-size:clamp(54px,7vw,92px);color:var(--gold);margin-bottom:36px;position:relative}
+footer{position:relative;z-index:1;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;max-width:1200px;margin:0 auto;padding:36px 48px;font-size:13px;color:#7d9078}
+footer a{color:var(--forest);text-decoration:none;font-weight:500}
+@media(max-width:900px){nav,.hero,section{padding-left:24px;padding-right:24px}.hero{grid-template-columns:1fr}.hero figure img{height:340px}.duo,.buyers,.gallery{grid-template-columns:1fr}}
+
+/* ---- Insights article styles (matches site) ---- */
+.article-main{position:relative;z-index:1}
+nav a.back{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--forest);text-decoration:none;font-weight:500}
+nav a.back:hover{color:var(--gold-dim)}
+.article-head{max-width:960px;margin:0 auto;padding:140px 48px 8px;text-align:center}
+.article-head h1{font-weight:400;font-size:clamp(38px,5vw,66px);line-height:1.08;margin:0 auto 22px;max-width:24ch;letter-spacing:-.01em}
+.article-head h1 em{font-style:italic;color:var(--forest)}
+.article-head .lede{margin:0 auto;font-size:19px;color:#4a5a4c;max-width:54ch}
+.byline{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold-dim);margin:28px 0 6px}
+.article-figure{max-width:1200px;margin:52px auto 0;padding:0 48px}
+.article-figure img{width:100%;height:400px;object-fit:cover}
+.article-body{max-width:690px;margin:0 auto;padding:54px 48px 40px;font-size:18px;color:#4a5a4c;font-weight:300;line-height:1.8}
+.article-body p{margin-bottom:24px}
+.article-body h2{font-weight:400;font-size:30px;line-height:1.2;color:var(--ink);margin:56px 0 20px}
+.article-body .pull{font-size:23px;font-style:italic;color:var(--ink);border-left:3px solid var(--gold);padding-left:26px;margin:56px 0;line-height:1.55}
+.insights-link{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dim);text-decoration:none;font-weight:500}
+.insights-link:hover{color:var(--forest)}
+</style>
+</head>
+<body>
+<canvas id="ledger"></canvas>
+<nav>
+  <div class="brand">Prime Domain Capital</div>
+  <a class="back" href="../index.html">&larr; Back to TaxManagedPortfolio.com</a>
+</nav>
+<main class="article-main">
+<div class="article-head">
+  <div class="kicker reveal">Tax-Managed Insights &middot; Research</div>
+  <h1 class="reveal">Direct Indexing vs. ETFs: <em>The Tax Alpha Comparison</em></h1>
+  <p class="lede reveal">Direct indexing is headed for $825B by 2026. ETFs remain the tax-efficiency kings of pooled investing. We compare tax alpha, costs, and fit, net of fees.</p>
+  <div class="byline reveal">Research &middot; Prime Domain Capital</div>
+</div>
+<figure class="article-figure reveal"><img src="../images/photo4.jpg" alt="direct indexing vs ETFs"></figure>
+<article class="article-body">
+<p>The most consequential product battle in taxable investing is happening quietly, in separately managed accounts, and the scoreboard is startling. Cerulli Associates projects direct indexing assets will reach roughly $825 billion by the end of 2026 — up from about $462 billion at the end of 2022, a 12.3% annual growth rate that outruns ETFs, mutual funds, and traditional separate accounts. More recent tallies put the figure near $1.2 trillion by the end of 2025. The category is on track to represent about a third of the retail separate-account market. Wall Street noticed years ago: BlackRock paid $1 billion for Aperio in 2020, Morgan Stanley paid more than $7 billion for Eaton Vance largely to get Parametric&#x27;s custom-portfolio engine, and Franklin Templeton bought O&#x27;Shaughnessy&#x27;s Canvas platform in 2021. This is not a fad. It is a land grab.</p>
+<p>The pitch is simple and genuinely powerful: instead of buying an S&amp;P 500 ETF, you buy the 500 stocks directly, inside your own account. You own the securities, not shares of a fund. That ownership is the entire game, because it lets you harvest tax losses at the single-security level — selling the 40 stocks that fell while keeping the 460 that rose, then buying near-identical replacements. An ETF cannot do this for you. Its internal gains and losses are pooled and invisible; you get the index return minus the fund&#x27;s distributed capital gains, and you have no say in the timing.</p>
+<h2>The Math That Matters: Net, Not Gross</h2>
+<p>Here is where the comparison gets honest. The tax benefit of direct indexing is real and measurable — Vanguard&#x27;s modeling puts expected long-run harvesting value at roughly 47 basis points a year for a suitable investor, and industry research cites 1% to 2% of annual tax alpha for equities in favorable conditions. But direct indexing costs money: typical fees run 0.20% to 0.40% a year, against roughly 0.03% for a plain-vanilla S&amp;P 500 ETF. The first 30 basis points of tax alpha go to paying the manager. The breakeven question is not &quot;does harvesting work&quot; — it does — but &quot;does it work by more than the fee, after tracking error, for your tax rate, over your horizon.&quot;</p>
+<p>ETFs, meanwhile, are tax-efficiency machines in their own right, and this is the part direct-indexing marketing glosses over. The in-kind redemption mechanism lets ETF managers flush appreciated securities out of the portfolio without distributing taxable gains — a structural advantage mutual funds simply do not have. For a buy-and-hold investor in a moderate tax bracket who rarely sells, a 0.03%-fee ETF that distributes almost no capital gains is brutally hard to beat. The tax drag on a well-run equity ETF is measured in single-digit basis points. You do not need a 0.35% direct-indexing fee to solve a 5-basis-point problem.</p>
+<p>So who wins? It depends on the investor, and the dividing lines are cleaner than the marketing suggests.</p>
+<p>Direct indexing wins — often decisively — for high-bracket investors with large taxable accounts, regular capital gains elsewhere to shelter (concentrated stock, business sales, real estate, private equity distributions), and a long horizon over which harvested losses compound. It also wins for investors who want customization the ETF cannot provide: excluding a concentrated legacy position&#x27;s sector while diversifying around it, applying values screens, tilting toward factors, or managing a concentrated position&#x27;s exit over years without a single-year tax detonation. Morningstar&#x27;s data shows tax-managed SMA assets passed $500 billion in 2024, up 67% from 2022 — that growth is coming from exactly these investors.</p>
+<p>ETFs win for everyone else: smaller accounts, lower brackets, IRAs and 401(k)s where harvesting is literally worthless (no taxes to manage), and investors who value simplicity and the lowest possible fee. Note the access point has moved — Schwab, Fidelity, BlackRock, and Vanguard now offer direct indexing minimums from $5,000 to $100,000 — but a $25,000 account harvesting a few hundred dollars of losses a year is paying more in fees than it saves in taxes. Scale matters. The Cerulli research is explicit that the economic sweet spot sits with investors holding roughly $2 million to $3 million and up.</p>
+<h2>The Question to Ask Before You Choose</h2>
+<p>There is a second-order consideration the industry whispers about: tracking error and complexity risk. A direct-indexed portfolio that harvests aggressively can drift from its benchmark; the replacement securities are chosen to be similar, not identical, and over years of harvesting the portfolio&#x27;s character can shift. Good managers control this with optimization constraints. Bad ones do not, and the investor discovers the drift in a year when it costs them. Ask any prospective manager for their historical tracking error, net of fees and taxes, over full market cycles — not the gross harvesting number.</p>
+<p>And here is the line to underline: <em>the best vehicle is the one whose tax benefit exceeds its total cost for your specific situation — and that answer changes with your bracket, your balance, and your gains.</em> There is no universal winner. There is only the right tool, priced fairly, for the job you actually have.</p>
+<p>The industry will keep growing — 12%-plus annual growth has a way of continuing until the marginal buyer stops benefiting. The winners in the direct-indexing land grab will be the firms that sell the net number honestly. The losers will be the ones still pitching gross.</p>
+<p class="pull">The tax-managed category is being built in real time. taxmanagedportfolio.com is available for acquisition. Inquiries: info@primedomaincapital.com.</p>
+</article>
+</main>
+<div class="closing">
+  <img src="../images/photo2.jpg" alt="">
+  <div class="kicker reveal" style="color:var(--gold)">Acquisition</div>
+  <h2 class="reveal">The after-tax <em>advantage,</em> named.</h2>
+  <div class="price reveal">$23,888</div>
+  <div class="reveal"><a class="btn" style="background:var(--gold);border-color:var(--gold);color:var(--ink)" href="https://www.afternic.com/domain/taxmanagedportfolio.com">Buy Now via Afternic</a></div>
+  <p class="reveal" style="margin-top:26px;font-size:13px;color:#9db09a;position:relative">Escrow.com secure transfer &middot; <a href="mailto:info@primedomaincapital.com" style="color:var(--gold)">info@primedomaincapital.com</a></p>
+</div>
+<footer>
+  <span>Offered by <strong>Prime Domain Capital</strong></span>
+  <span><a href="mailto:info@primedomaincapital.com">info@primedomaincapital.com</a></span>
+</footer>
+<script>
+// Falling ledger figures
+const c=document.getElementById('ledger'),x=c.getContext('2d');let W,H;function rs(){W=c.width=innerWidth;H=c.height=innerHeight}rs();addEventListener('resize',rs);
+const figs=[];const sym=['$','%','0','1','2','3','4','5','6','7','8','9','−','+'];
+for(let i=0;i<60;i++)figs.push({x:Math.random()*W,y:Math.random()*H,s:Math.random()*.5+.2,ch:sym[Math.floor(Math.random()*sym.length)]});
+(function loop(){x.clearRect(0,0,W,H);x.font='14px monospace';for(const f of figs){f.y+=f.s;if(f.y>H){f.y=0;f.x=Math.random()*W}x.fillStyle='rgba(20,60,42,.16)';x.fillText(f.ch,f.x,f.y)}requestAnimationFrame(loop)})();
+const io=new IntersectionObserver(e=>e.forEach(v=>{if(v.isIntersecting){v.target.classList.add('in');io.unobserve(v.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "5fb51d1999084c91989809d7608061e0"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>
